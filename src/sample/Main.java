@@ -25,7 +25,7 @@ public class Main extends Application {
 
         String url = "jdbc:mysql://localhost:3306/database_dispenser?autoReconnect=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
         String user = "root";
-        String password = "Papamaurice11";
+        String password = "Papamaurce11";
 
         try {
             Connection connection = DriverManager.getConnection(url,user,password);
@@ -34,7 +34,7 @@ public class Main extends Application {
             ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()) {
-                System.out.println(resultSet.getString("Voornaam"));
+                System.out.println(resultSet.getString("Achternaam"));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
