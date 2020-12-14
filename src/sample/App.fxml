@@ -14,7 +14,4 @@
             <Button text="btn 3" userData="/sample/view_3.fxml"/>
         </VBox>
     </left>
-    <center>
-        <fx:include source="view_1.fxml"/>
-    </center>
 </BorderPane>

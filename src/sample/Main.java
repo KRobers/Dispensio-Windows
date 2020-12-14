@@ -12,14 +12,15 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Toevoeging.fxml"));
         primaryStage.setTitle("Dispensio");
         primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         launch(args);
 
 
@@ -39,5 +40,5 @@ public class Main extends Application {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-    }
+    } */
 }

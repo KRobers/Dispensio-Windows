@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Toevoeging">
+   <children>
+      <Pane centerShape="false" layoutX="7.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TextField layoutX="116.0" layoutY="94.0" promptText="Naam medicatie" />
+            <DatePicker layoutX="300.0" layoutY="139.0" promptText="Tot en met" />
+            <DatePicker layoutX="116.0" layoutY="139.0" promptText="Vanaf" />
+            <CheckBox layoutX="116.0" layoutY="229.0" mnemonicParsing="false" text="Maandag" />
+            <CheckBox layoutX="200.0" layoutY="229.0" mnemonicParsing="false" text="Dinsdag" />
+            <CheckBox layoutX="285.0" layoutY="229.0" mnemonicParsing="false" text="Woensdag" />
+            <CheckBox layoutX="387.0" layoutY="229.0" mnemonicParsing="false" text="Donderdag" />
+            <CheckBox layoutX="174.0" layoutY="262.0" mnemonicParsing="false" text="Vrijdag" />
+            <CheckBox layoutX="255.0" layoutY="262.0" mnemonicParsing="false" text="Zaterdag" />
+            <CheckBox layoutX="337.0" layoutY="262.0" mnemonicParsing="false" text="Zondag" />
+             <Spinner fx:id="spinnerDosering" layoutX="297.0" layoutY="94.0" prefHeight="25.0" prefWidth="52.0">
+                 <valueFactory>
+                     <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
+                 </valueFactory>
+             </Spinner>
+            <TextField layoutX="349.0" layoutY="94.0" prefHeight="25.0" prefWidth="124.0" promptText=" Dosering in mg" />
+             <Spinner fx:id="spinnerUur" layoutX="248.0" layoutY="188.0" prefHeight="25.0" prefWidth="52.0">
+                 <valueFactory>
+                     <SpinnerValueFactory.IntegerSpinnerValueFactory max="24" min="00" />
+                 </valueFactory>
+             </Spinner>
+             <Spinner fx:id="spinnerMinuut" layoutX="298.0" layoutY="188.0" prefHeight="25.0" prefWidth="52.0">
+                 <valueFactory>
+                     <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="00" />
+                 </valueFactory>
+             </Spinner>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
