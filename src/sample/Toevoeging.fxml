@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Toevoeging">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Pane centerShape="false" layoutX="7.0" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -33,6 +33,7 @@
                      <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="00" />
                  </valueFactory>
              </Spinner>
+            <Button fx:id="okButton" layoutX="259.0" layoutY="299.0" mnemonicParsing="false" text="Ok" />
          </children>
       </Pane>
    </children>
