@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="Pane" stylesheets="@../../../Dispensio-Windows/src/sample/Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.registercontroller">
+   <children>
+      <AnchorPane prefHeight="150.0" prefWidth="800.0" style="-fx-background-color: #6bdbff;">
+         <children>
+            <ImageView fx:id="brandingimageview" fitHeight="150.0" fitWidth="160.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo_transparent.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="248.0" layoutY="39.0" text="Register page" textFill="WHITE">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="7.0" layoutY="285.0" prefHeight="200.0" prefWidth="200.0" />
+      <Pane layoutX="150.0" layoutY="164.0" prefHeight="348.0" prefWidth="500.0" style="-fx-border-color: #00768A; -fx-border-width: 5;">
+         <children>
+            <Label layoutX="100.0" layoutY="63.0" text="Username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Usernamebox" layoutX="100.0" layoutY="84.0" prefHeight="25.0" prefWidth="300.0" promptText="Typ new username" style="-fx-border-color: #00a0db; -fx-border-width: 2.5;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="102.0" layoutY="135.0" text="Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="Passwordbox" layoutX="100.0" layoutY="156.0" prefHeight="25.0" prefWidth="300.0" promptText="Typ new password" style="-fx-border-color: #00a0db; -fx-border-width: 2.5;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <PasswordField fx:id="Cpasswordbox" layoutX="100.0" layoutY="225.0" prefHeight="25.0" prefWidth="300.0" promptText="Typ password again " style="-fx-border-color: #00a0db; -fx-border-width: 2.5;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="100.0" layoutY="207.0" text="Confirm password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="301.0" layoutY="295.0" mnemonicParsing="false" onAction="#registerbuttonaction" prefHeight="39.0" prefWidth="185.0" style="-fx-background-color: #00a0db;" text="Register" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="Cancelbox" layoutX="14.0" layoutY="295.0" mnemonicParsing="false" onAction="#closeButtononAction" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: #00a0db;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label fx:id="RegistrationLabel" alignment="CENTER" layoutX="5.0" layoutY="268.0" prefHeight="21.0" prefWidth="490.0">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordNotMatching" alignment="CENTER_RIGHT" layoutX="220.0" layoutY="209.0" prefHeight="17.0" prefWidth="185.0" />
+            <Label layoutX="160.0" layoutY="14.0" text="Register here">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane layoutY="550.0" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #53adcb;">
+         <children>
+            <Label layoutX="14.0" layoutY="17.0" text="Questions? Contact us at Papamaurice_dispensio@gmaill.com" textFill="WHITE" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

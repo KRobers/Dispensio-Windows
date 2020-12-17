@@ -1,0 +1,4 @@
+.Pane {
+    -fx-background-image:url('../images/testt.jpg');
+    -fx-background-size: 1000,700;
+}

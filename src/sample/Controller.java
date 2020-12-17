@@ -12,9 +12,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-
 import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Date;
@@ -39,16 +37,14 @@ public class Controller {
             stage.setScene(scene);
             stage.show();
 
-        }
-
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("werkt niet");
             ;
         }
     }
 
-    @FXML
-    public void noti(javafx.event.ActionEvent actionEvent){
+   /* @FXML
+    public void noti(javafx.event.ActionEvent actionEvent) {
         System.out.println("Notificatie");
 
         Notifications.create()
@@ -58,90 +54,89 @@ public class Controller {
                 .hideAfter(Duration.seconds(5))
                 .text("Uw bent vergeten uw medicatie in te nemen!")
                 .show();
-
     }
-    @FXML
-    private Button cancelBox;
+    */
+        @FXML
+        private Button cancelBox;
 
-    @FXML
-    private TextField naamMedicatie;
+        @FXML
+        private TextField naamMedicatie;
 
-    @FXML
-    private TextField dosering;
+        @FXML
+        private TextField dosering;
 
-    @FXML
-    private Spinner spinnerDosering;
+        @FXML
+        private Spinner spinnerDosering;
 
-    @FXML
-    private DatePicker vanafDate;
+        @FXML
+        private DatePicker vanafDate;
 
-    @FXML
-    private DatePicker totDate;
+        @FXML
+        private DatePicker totDate;
 
-    @FXML
-    private Spinner spinnerUur;
+        @FXML
+        private Spinner spinnerUur;
 
-    @FXML
-    private Spinner spinnerMinuut;
+        @FXML
+        private Spinner spinnerMinuut;
 
-    @FXML
-    private CheckBox maandagCheck;
+        @FXML
+        private CheckBox maandagCheck;
 
-    @FXML
-    private CheckBox dinsdagCheck;
+        @FXML
+        private CheckBox dinsdagCheck;
 
-    @FXML
-    private CheckBox woensdagCheck;
+        @FXML
+        private CheckBox woensdagCheck;
 
-    @FXML
-    private CheckBox donderdagCheck;
+        @FXML
+        private CheckBox donderdagCheck;
 
-    @FXML
-    private CheckBox vrijdagCheck;
+        @FXML
+        private CheckBox vrijdagCheck;
 
-    @FXML
-    private CheckBox zaterdagCheck;
+        @FXML
+        private CheckBox zaterdagCheck;
 
-    @FXML
-    private CheckBox zondagCheck;
+        @FXML
+        private CheckBox zondagCheck;
 
-    @FXML
-    public void closeButtononAction(ActionEvent event) {
+        @FXML
+        public void closebutton (ActionEvent actionEvent) {
+            String naamMedicijn = naamMedicatie.getText();
+            System.out.println(naamMedicijn);
 
-        String naamMedicijn = naamMedicatie.getText();
-        System.out.println(naamMedicijn);
+            int aantalDosering = (int) spinnerDosering.getValue();
+            System.out.println(aantalDosering);
 
-        int aantalDosering = (int) spinnerDosering.getValue();
-        System.out.println(aantalDosering);
+            String doseringmg = dosering.getText();
+            System.out.printf(doseringmg);
 
-        String doseringmg = dosering.getText();
-        System.out.printf(doseringmg);
+            System.out.println();
 
-        System.out.println();
+            LocalDate vanaf = vanafDate.getValue();
+            System.out.println(vanaf);
 
-        LocalDate vanaf = vanafDate.getValue();
-        System.out.println(vanaf);
+            LocalDate tot = totDate.getValue();
+            System.out.println(tot);
 
-        LocalDate tot = totDate.getValue();
-        System.out.println(tot);
-
-        int uur = (int) spinnerUur.getValue();
-        int minuut = (int) spinnerMinuut.getValue();
-        System.out.println(uur + ":" + minuut);
-
-
-        boolean maandag = maandagCheck.isSelected();
-        boolean dinsdag = dinsdagCheck.isSelected();
-        boolean woensdag = woensdagCheck.isSelected();
-        boolean donderdag = donderdagCheck.isSelected();
-        boolean vrijdag = vrijdagCheck.isSelected();
-        boolean zaterdag = zaterdagCheck.isSelected();
-        boolean zondag = zondagCheck.isSelected();
-        System.out.println("Maandag: " + maandag + " Dinsdag: " + dinsdag + " Woensdag: " + woensdag + " Donderdag: " + donderdag + " Vrijdag: " + vrijdag + " Zaterdag: " + zaterdag + " Zondag: " + zondag);
-
-        Stage stage = (Stage) cancelBox.getScene().getWindow();
-        stage.close();
+            int uur = (int) spinnerUur.getValue();
+            int minuut = (int) spinnerMinuut.getValue();
+            System.out.println(uur + ":" + minuut);
 
 
+            boolean maandag = maandagCheck.isSelected();
+            boolean dinsdag = dinsdagCheck.isSelected();
+            boolean woensdag = woensdagCheck.isSelected();
+            boolean donderdag = donderdagCheck.isSelected();
+            boolean vrijdag = vrijdagCheck.isSelected();
+            boolean zaterdag = zaterdagCheck.isSelected();
+            boolean zondag = zondagCheck.isSelected();
+            System.out.println("Maandag: " + maandag + " Dinsdag: " + dinsdag + " Woensdag: " + woensdag + " Donderdag: " + donderdag + " Vrijdag: " + vrijdag + " Zaterdag: " + zaterdag + " Zondag: " + zondag);
+
+            Stage stage = (Stage) cancelBox.getScene().getWindow();
+            stage.close();
+
+
+        }
     }
-}
