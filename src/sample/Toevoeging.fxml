@@ -7,22 +7,22 @@
    <children>
       <Pane centerShape="false" layoutX="7.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <TextField layoutX="116.0" layoutY="94.0" promptText="Naam medicatie" />
-            <DatePicker layoutX="300.0" layoutY="139.0" promptText="Tot en met" />
-            <DatePicker layoutX="116.0" layoutY="139.0" promptText="Vanaf" />
-            <CheckBox layoutX="116.0" layoutY="229.0" mnemonicParsing="false" text="Maandag" />
-            <CheckBox layoutX="200.0" layoutY="229.0" mnemonicParsing="false" text="Dinsdag" />
-            <CheckBox layoutX="285.0" layoutY="229.0" mnemonicParsing="false" text="Woensdag" />
-            <CheckBox layoutX="387.0" layoutY="229.0" mnemonicParsing="false" text="Donderdag" />
-            <CheckBox layoutX="174.0" layoutY="262.0" mnemonicParsing="false" text="Vrijdag" />
-            <CheckBox layoutX="255.0" layoutY="262.0" mnemonicParsing="false" text="Zaterdag" />
-            <CheckBox layoutX="337.0" layoutY="262.0" mnemonicParsing="false" text="Zondag" />
+            <TextField fx:id="naamMedicatie" layoutX="116.0" layoutY="94.0" promptText="Naam medicatie" />
+            <DatePicker fx:id="totDate" layoutX="300.0" layoutY="139.0" promptText="Tot en met" />
+            <DatePicker fx:id="vanafDate" layoutX="116.0" layoutY="139.0" promptText="Vanaf" />
+            <CheckBox fx:id="maandagCheck" layoutX="116.0" layoutY="229.0" mnemonicParsing="false" text="Maandag" />
+            <CheckBox fx:id="dinsdagCheck" layoutX="200.0" layoutY="229.0" mnemonicParsing="false" text="Dinsdag" />
+            <CheckBox fx:id="woensdagCheck" layoutX="285.0" layoutY="229.0" mnemonicParsing="false" text="Woensdag" />
+            <CheckBox fx:id="donderdagCheck" layoutX="387.0" layoutY="229.0" mnemonicParsing="false" text="Donderdag" />
+            <CheckBox fx:id="vrijdagCheck" layoutX="174.0" layoutY="262.0" mnemonicParsing="false" text="Vrijdag" />
+            <CheckBox fx:id="zaterdagCheck" layoutX="255.0" layoutY="262.0" mnemonicParsing="false" text="Zaterdag" />
+            <CheckBox fx:id="zondagCheck" layoutX="337.0" layoutY="262.0" mnemonicParsing="false" text="Zondag" />
              <Spinner fx:id="spinnerDosering" layoutX="297.0" layoutY="94.0" prefHeight="25.0" prefWidth="52.0">
                  <valueFactory>
                      <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
                  </valueFactory>
              </Spinner>
-            <TextField layoutX="349.0" layoutY="94.0" prefHeight="25.0" prefWidth="124.0" promptText=" Dosering in mg" />
+            <TextField fx:id="dosering" layoutX="349.0" layoutY="94.0" prefHeight="25.0" prefWidth="124.0" promptText=" Dosering in mg" />
              <Spinner fx:id="spinnerUur" layoutX="248.0" layoutY="188.0" prefHeight="25.0" prefWidth="52.0">
                  <valueFactory>
                      <SpinnerValueFactory.IntegerSpinnerValueFactory max="24" min="00" />
@@ -33,7 +33,7 @@
                      <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="00" />
                  </valueFactory>
              </Spinner>
-            <Button fx:id="okButton" layoutX="259.0" layoutY="299.0" mnemonicParsing="false" text="Ok" />
+            <Button fx:id="cancelBox" layoutX="259.0" layoutY="299.0" mnemonicParsing="false" onAction="#closeButtononAction" text="Ok" />
          </children>
       </Pane>
    </children>

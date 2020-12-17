@@ -39,7 +39,7 @@
                 </Label>
                 <TableView fx:id="table" layoutY="45.0" prefHeight="355.0" prefWidth="540.0" style="-fx-background-color: grey;">
                     <columns>
-                        <TableColumn fx:id="maandag" prefWidth="68.0" text="Monday" />
+                        <TableColumn fx:id="maandagTable" prefWidth="68.0" text="Monday" />
                         <TableColumn fx:id="dinsdag" prefWidth="82.0" text="Tuesday" />
                         <TableColumn fx:id="woensdag" prefWidth="75.0" text="Wednesday" />
                         <TableColumn fx:id="don" prefWidth="75.0" text="Thursday" />
