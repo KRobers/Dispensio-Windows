@@ -21,6 +21,9 @@ import java.time.LocalDate;
 public class Controller {
 
     @FXML
+    Button Setbut;
+
+    @FXML
     private Button cancelButton;
 
     @FXML
@@ -49,7 +52,7 @@ public class Controller {
         connector connector = new connector();
         Connection connectDbReg = connector.getConnection();
 
-        String sqlLogin = "SELECT * FROM accountgegevens WHERE Gebruikersnaam = '" + usernameField.getText() + "' AND wachtwoord ='" + passwordField.getText() +"'" ;
+        String sqlLogin = "SELECT * FROM accountgegevens WHERE Gebruikersnaam = '" + usernameField.getText() + "' AND wachtwoord ='" + passwordField.getText() + "'";
 
         try {
             Statement statement = connectDbReg.createStatement();
@@ -59,8 +62,7 @@ public class Controller {
                 if (result.getInt(1) == 1) {
                     loginMessage.setText("Login Succesfull");
                     openapp();
-                }
-                else {
+                } else {
                     loginMessage.setText("Login Succesfull");
                 }
             }
@@ -94,7 +96,7 @@ public class Controller {
     public void createAccount() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
-            Stage registerStage =new Stage();
+            Stage registerStage = new Stage();
             registerStage.setTitle("Dispensio");
             registerStage.setScene(new Scene(root, 800, 600));
             registerStage.show();
@@ -142,87 +144,113 @@ public class Controller {
                 .show();
     }
 
-        @FXML
-        private Button cancelBox;
+    @FXML
+    private Button cancelBox;
 
-        @FXML
-        private TextField naamMedicatie;
+    @FXML
+    private TextField naamMedicatie;
 
-        @FXML
-        private TextField dosering;
+    @FXML
+    private TextField dosering;
 
-        @FXML
-        private Spinner spinnerDosering;
+    @FXML
+    private Spinner spinnerDosering;
 
-        @FXML
-        private DatePicker vanafDate;
+    @FXML
+    private DatePicker vanafDate;
 
-        @FXML
-        private DatePicker totDate;
+    @FXML
+    private DatePicker totDate;
 
-        @FXML
-        private Spinner spinnerUur;
+    @FXML
+    private Spinner spinnerUur;
 
-        @FXML
-        private Spinner spinnerMinuut;
+    @FXML
+    private Spinner spinnerMinuut;
 
-        @FXML
-        private CheckBox maandagCheck;
+    @FXML
+    private CheckBox maandagCheck;
 
-        @FXML
-        private CheckBox dinsdagCheck;
+    @FXML
+    private CheckBox dinsdagCheck;
 
-        @FXML
-        private CheckBox woensdagCheck;
+    @FXML
+    private CheckBox woensdagCheck;
 
-        @FXML
-        private CheckBox donderdagCheck;
+    @FXML
+    private CheckBox donderdagCheck;
 
-        @FXML
-        private CheckBox vrijdagCheck;
+    @FXML
+    private CheckBox vrijdagCheck;
 
-        @FXML
-        private CheckBox zaterdagCheck;
+    @FXML
+    private CheckBox zaterdagCheck;
 
-        @FXML
-        private CheckBox zondagCheck;
+    @FXML
+    private CheckBox zondagCheck;
 
-        @FXML
-        public void closeButtononAction (ActionEvent actionEvent) {
-            String naamMedicijn = naamMedicatie.getText();
-            System.out.println(naamMedicijn);
+    @FXML
+    public void closeButtononAction(ActionEvent actionEvent) {
+        String naamMedicijn = naamMedicatie.getText();
+        System.out.println(naamMedicijn);
 
-            int aantalDosering = (int) spinnerDosering.getValue();
-            System.out.println(aantalDosering);
+        int aantalDosering = (int) spinnerDosering.getValue();
+        System.out.println(aantalDosering);
 
-            String doseringmg = dosering.getText();
-            System.out.printf(doseringmg);
+        String doseringmg = dosering.getText();
+        System.out.printf(doseringmg);
 
-            System.out.println();
+        System.out.println();
 
-            LocalDate vanaf = vanafDate.getValue();
-            System.out.println(vanaf);
+        LocalDate vanaf = vanafDate.getValue();
+        System.out.println(vanaf);
 
-            LocalDate tot = totDate.getValue();
-            System.out.println(tot);
+        LocalDate tot = totDate.getValue();
+        System.out.println(tot);
 
-            int uur = (int) spinnerUur.getValue();
-            int minuut = (int) spinnerMinuut.getValue();
-            System.out.println(uur + ":" + minuut);
-
-
-            boolean maandag = maandagCheck.isSelected();
-            boolean dinsdag = dinsdagCheck.isSelected();
-            boolean woensdag = woensdagCheck.isSelected();
-            boolean donderdag = donderdagCheck.isSelected();
-            boolean vrijdag = vrijdagCheck.isSelected();
-            boolean zaterdag = zaterdagCheck.isSelected();
-            boolean zondag = zondagCheck.isSelected();
-            System.out.println("Maandag: " + maandag + " Dinsdag: " + dinsdag + " Woensdag: " + woensdag + " Donderdag: " + donderdag + " Vrijdag: " + vrijdag + " Zaterdag: " + zaterdag + " Zondag: " + zondag);
-
-            Stage stage = (Stage) cancelBox.getScene().getWindow();
-            stage.close();
+        int uur = (int) spinnerUur.getValue();
+        int minuut = (int) spinnerMinuut.getValue();
+        System.out.println(uur + ":" + minuut);
 
 
-        }
+        boolean maandag = maandagCheck.isSelected();
+        boolean dinsdag = dinsdagCheck.isSelected();
+        boolean woensdag = woensdagCheck.isSelected();
+        boolean donderdag = donderdagCheck.isSelected();
+        boolean vrijdag = vrijdagCheck.isSelected();
+        boolean zaterdag = zaterdagCheck.isSelected();
+        boolean zondag = zondagCheck.isSelected();
+        System.out.println("Maandag: " + maandag + " Dinsdag: " + dinsdag + " Woensdag: " + woensdag + " Donderdag: " + donderdag + " Vrijdag: " + vrijdag + " Zaterdag: " + zaterdag + " Zondag: " + zondag);
+
+        Stage stage = (Stage) cancelBox.getScene().getWindow();
+        stage.close();
+
+
     }
+
+    //--------------------settings----------------------------------//
+    public void Setup() throws Exception {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("Settings.fxml"));
+            /*
+             * if "fx:controller" is not set in fxml
+             * fxmlLoader.setController(NewWindowController);
+             */
+            Scene scene = new Scene(fxmlLoader.load(), 630, 400);
+            Stage stage = new Stage();
+            stage.setTitle("Dispensio");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
+
+
+
+    }
+

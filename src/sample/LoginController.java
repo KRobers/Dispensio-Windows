@@ -74,7 +74,7 @@ public class LoginController {
             Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
             Stage registerStage =new Stage();
             registerStage.setTitle("Dispensio");
-            registerStage.setScene(new Scene(root, 600, 400));
+            registerStage.setScene(new Scene(root, 800, 600));
             registerStage.show();
 
         } catch (Exception e) {
