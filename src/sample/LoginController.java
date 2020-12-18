@@ -59,6 +59,7 @@ public class LoginController {
                 }
                 else {
                     loginMessage.setText("Login Succesfull");
+                    openapp();
                 }
             }
 

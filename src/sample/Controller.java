@@ -1,38 +1,22 @@
 package sample;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.util.Date;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class Controller {
 
@@ -89,11 +73,17 @@ public class Controller {
 
     public void openapp() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
-            Stage CreateStage =new Stage();
-            CreateStage.setTitle("Dispensio");
-            CreateStage.setScene(new Scene(root, 600, 400));
-            CreateStage.show();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("App.fxml"));
+            /*
+             * if "fx:controller" is not set in fxml
+             * fxmlLoader.setController(NewWindowController);
+             */
+            Scene scene = new Scene(fxmlLoader.load(), 630, 400);
+            Stage stage = new Stage();
+            stage.setTitle("Dispensio");
+            stage.setScene(scene);
+            stage.show();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -139,7 +129,7 @@ public class Controller {
         }
     }
 
-   /* @FXML
+    @FXML
     public void noti(javafx.event.ActionEvent actionEvent) {
         System.out.println("Notificatie");
 
@@ -151,7 +141,7 @@ public class Controller {
                 .text("Uw bent vergeten uw medicatie in te nemen!")
                 .show();
     }
-    */
+
         @FXML
         private Button cancelBox;
 
@@ -198,7 +188,7 @@ public class Controller {
         private CheckBox zondagCheck;
 
         @FXML
-        public void closebutton (ActionEvent actionEvent) {
+        public void closeButtononAction (ActionEvent actionEvent) {
             String naamMedicijn = naamMedicatie.getText();
             System.out.println(naamMedicijn);
 

@@ -14,7 +14,7 @@
                     <graphic>
                         <ImageView fitHeight="63.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../Downloads/ilyas/lib/images/menu.png" />
+                                <Image url="@/images/menu.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -23,7 +23,7 @@
                     <graphic>
                         <ImageView fitHeight="63.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../Downloads/ilyas/lib/images/plus2.png" />
+                                <Image url="@/images/plus2.png" />
                             </image>
                         </ImageView>
                     </graphic>
