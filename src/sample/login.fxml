@@ -16,7 +16,7 @@
             </ImageView>
          </left>
          <center>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Login page" textFill="WHITE" BorderPane.alignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Login " textFill="WHITE" BorderPane.alignment="CENTER">
                <font>
                   <Font size="50.0" />
                </font>

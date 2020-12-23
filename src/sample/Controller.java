@@ -10,7 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import org.controlsfx.control.Notifications;
+//import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -19,9 +19,6 @@ import java.sql.Statement;
 import java.time.LocalDate;
 
 public class Controller {
-
-    @FXML
-    Button Setbut;
 
     @FXML
     private Button cancelButton;
@@ -131,8 +128,8 @@ public class Controller {
         }
     }
 
-    @FXML
-    public void noti(javafx.event.ActionEvent actionEvent) {
+
+   /* public void noti(javafx.event.ActionEvent actionEvent) {
         System.out.println("Notificatie");
 
         Notifications.create()
@@ -143,7 +140,7 @@ public class Controller {
                 .text("Uw bent vergeten uw medicatie in te nemen!")
                 .show();
     }
-
+*/
     @FXML
     private Button cancelBox;
 

@@ -2,8 +2,9 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="0.0" prefWidth="0.0" styleClass="Pane" stylesheets="@Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Pane centerShape="false" layoutX="7.0" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -36,5 +37,12 @@
             <Button fx:id="cancelBox" layoutX="259.0" layoutY="299.0" mnemonicParsing="false" onAction="#closeButtononAction" text="Ok" />
          </children>
       </Pane>
+      <AnchorPane prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: #6bdbff;">
+         <children>
+            <Label layoutX="163.0" layoutY="11.0" text="Voeg hier de medicatie toe" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font></Label>
+         </children></AnchorPane>
    </children>
 </AnchorPane>

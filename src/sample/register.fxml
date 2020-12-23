@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -9,12 +8,7 @@
    <children>
       <AnchorPane prefHeight="150.0" prefWidth="800.0" style="-fx-background-color: #6bdbff;">
          <children>
-            <ImageView fx:id="brandingimageview" fitHeight="150.0" fitWidth="160.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/logo_transparent.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="248.0" layoutY="39.0" text="Register page" textFill="WHITE">
+            <Label layoutX="310.0" layoutY="39.0" text="Register" textFill="WHITE">
                <font>
                   <Font size="50.0" />
                </font>

@@ -55,8 +55,8 @@ public class registercontroller {
          String Username = Usernamebox.getText();
          String Password = Passwordbox.getText();
 
-         String insertFieldsQuery = "INSERT INTO accountgegevens(Gebruikersnaam,Wachtwoord) VALUES (";
-         String insertValues = Username + "','" + Password + ")";
+         String insertFieldsQuery = "INSERT INTO accountgegevens(Gebruikersnaam,Wachtwoord) VALUES ('";
+         String insertValues = Username + "','" + Password + "')";
          String insertRegister = insertFieldsQuery + insertValues;
 
         try {

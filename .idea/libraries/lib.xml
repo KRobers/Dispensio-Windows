@@ -1,18 +1,13 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib" />
+      <root url="file://$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib/javafx.base" />
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib/javafx.controls" />
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib/javafx.fxml" />
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib/javafx.graphics" />
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib/javafx.media" />
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib/javafx.swing" />
-      <root url="file://$USER_HOME$/Downloads/ilyas/lib/javafx.web" />
+      <root url="file://$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib" />
     </SOURCES>
-    <jarDirectory url="file://$USER_HOME$/Downloads/ilyas/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Desktop/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
   </library>
 </component>
