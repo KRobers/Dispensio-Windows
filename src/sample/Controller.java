@@ -73,7 +73,7 @@ public class Controller {
     public void openapp() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("App.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("Toevoeging.fxml"));
             /*
              * if "fx:controller" is not set in fxml
              * fxmlLoader.setController(NewWindowController);
@@ -145,46 +145,20 @@ public class Controller {
     private Button cancelBox;
 
     @FXML
-    private TextField naamMedicatie;
+    private TextField naamMedicatie, dosering;
 
     @FXML
-    private TextField dosering;
+    private DatePicker vanafDate, totDate;
 
     @FXML
-    private Spinner spinnerDosering;
+    private Spinner spinnerUur, spinnerMinuut, spinnerDosering;
 
     @FXML
-    private DatePicker vanafDate;
+    private CheckBox maandagCheck, dinsdagCheck, woensdagCheck, donderdagCheck, vrijdagCheck, zaterdagCheck, zondagCheck;
 
     @FXML
-    private DatePicker totDate;
+    private String resultaatDagen;
 
-    @FXML
-    private Spinner spinnerUur;
-
-    @FXML
-    private Spinner spinnerMinuut;
-
-    @FXML
-    private CheckBox maandagCheck;
-
-    @FXML
-    private CheckBox dinsdagCheck;
-
-    @FXML
-    private CheckBox woensdagCheck;
-
-    @FXML
-    private CheckBox donderdagCheck;
-
-    @FXML
-    private CheckBox vrijdagCheck;
-
-    @FXML
-    private CheckBox zaterdagCheck;
-
-    @FXML
-    private CheckBox zondagCheck;
 
     @FXML
     public void closeButtononAction(ActionEvent actionEvent) {
@@ -207,9 +181,8 @@ public class Controller {
 
         int uur = (int) spinnerUur.getValue();
         int minuut = (int) spinnerMinuut.getValue();
-        System.out.println(uur + ":" + minuut);
-
-
+        String tijd = (uur + ":" + minuut);
+        
         boolean maandag = maandagCheck.isSelected();
         boolean dinsdag = dinsdagCheck.isSelected();
         boolean woensdag = woensdagCheck.isSelected();
@@ -217,13 +190,69 @@ public class Controller {
         boolean vrijdag = vrijdagCheck.isSelected();
         boolean zaterdag = zaterdagCheck.isSelected();
         boolean zondag = zondagCheck.isSelected();
-        System.out.println("Maandag: " + maandag + " Dinsdag: " + dinsdag + " Woensdag: " + woensdag + " Donderdag: " + donderdag + " Vrijdag: " + vrijdag + " Zaterdag: " + zaterdag + " Zondag: " + zondag);
 
+        if (maandag == true) {
+            resultaatDagen = resultaatDagen + "Maandag, ";
+        }
+        else {
+            resultaatDagen = resultaatDagen;
+        }
+        if (dinsdag == true) {
+            resultaatDagen = resultaatDagen + "Dinsdag, ";
+        }
+        else {
+            resultaatDagen = resultaatDagen;
+        }
+        if (woensdag == true) {
+            resultaatDagen = resultaatDagen + "Woensdag, ";
+        }
+        else {
+            resultaatDagen = resultaatDagen;
+        }
+        if (donderdag == true) {
+            resultaatDagen = resultaatDagen + "Donderdag, ";
+        }
+        else {
+            resultaatDagen = resultaatDagen;
+        }
+        if (vrijdag == true) {
+            resultaatDagen = resultaatDagen + "Vrijdag, ";
+        }
+        else {
+            resultaatDagen = resultaatDagen;
+        }
+        if (zaterdag == true) {
+            resultaatDagen = resultaatDagen + "Zaterdag, ";
+        }
+        else {
+            resultaatDagen = resultaatDagen;
+        }
+        if (zondag == true) {
+            resultaatDagen = resultaatDagen + "Zondag";
+        }
+        else {
+            resultaatDagen = resultaatDagen;
+        }
+        System.out.println(resultaatDagen);
         Stage stage = (Stage) cancelBox.getScene().getWindow();
         stage.close();
+        connector connector = new connector();
+        Connection connectDbReg = connector.getConnection();
 
+        String Insert = "INSERT INTO innameinformatie (Medicijnnaam,Aantalpillen,Gewicht,Startdatum,Eindatum,TijdInname,Innamedagen) VALUES('";
+        String Values = naamMedicijn + "','" + aantalDosering  + "','" + doseringmg + "','" + vanaf + "','" + tot + "','" + tijd +"','" + resultaatDagen + "')";
+        String addquery = Insert + Values;
 
+        try {
+            Statement statement = connectDbReg.createStatement();
+            statement.executeUpdate(addquery);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
     }
+
 
     //--------------------settings----------------------------------//
     public void Setup() throws Exception {
@@ -246,8 +275,5 @@ public class Controller {
         }
 
     }
-
-
-
     }
 
