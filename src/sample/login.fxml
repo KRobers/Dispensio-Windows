@@ -75,7 +75,7 @@
       <ImageView fitHeight="125.0" fitWidth="800.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane layoutY="558.0" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #53adcb;">
          <children>
-            <Label layoutX="27.0" layoutY="17.0" text="Question? Contact us at Papamaurice_dispensio@gmail.com" textFill="WHITE" />
+            <Label layoutX="27.0" layoutY="17.0" text="Questions? Contact us at Papamaurice_dispensio@gmail.com" textFill="WHITE" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

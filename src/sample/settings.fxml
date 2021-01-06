@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="223.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Settings">
@@ -100,31 +97,31 @@
             </font>
          </Label>
          <Separator layoutX="24.0" layoutY="154.0" prefHeight="4.0" prefWidth="481.0" />
-         <Slider cache="true" layoutX="24.0" layoutY="195.0" prefHeight="14.0" prefWidth="481.0" showTickLabels="true" style="-fx-background-color: transparent;" value="50.0">
-            <effect>
-               <Lighting>
-                  <bumpInput>
-                     <Shadow />
-                  </bumpInput>
-                  <light>
-                     <Light.Point>
-                        <color>
-                           <Color red="0.8421052694320679" green="0.03118908405303955" blue="0.03118908405303955" />
-                        </color>
-                     </Light.Point>
-                  </light>
-               </Lighting>
-            </effect>
-            <cursor>
-               <Cursor fx:constant="DEFAULT" />
-            </cursor></Slider>
-         <Label layoutX="27.0" layoutY="172.0" text="SCREEN BRIGHTNESS" textFill="WHITE">
-            <font>
-               <Font name="System Bold" size="12.0" />
-            </font>
-         </Label>
-         <CheckBox layoutX="399.0" layoutY="172.0" mnemonicParsing="false" text="Auto brightness" textFill="#fcfcfc" />
          <Button layoutX="299.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: black; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Save" textFill="WHITE" />
          <Button layoutX="73.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: #515D6D; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Cancel" textFill="WHITE" />
+         <AnchorPane layoutX="29.0" layoutY="157.0" prefHeight="97.0" prefWidth="481.0">
+            <children>
+               <Button fx:id="ResetPasswordButton" layoutX="415.0" layoutY="58.0" mnemonicParsing="false" onAction="#CheckPassword" text="Reset" />
+               <Label layoutX="14.0" layoutY="6.0" text="Reset password">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Label>
+               <PasswordField fx:id="NewPassword" layoutX="14.0" layoutY="58.0" prefHeight="25.0" prefWidth="180.0" />
+               <PasswordField fx:id="ConfirmNewPassword" layoutX="211.0" layoutY="58.0" prefHeight="25.0" prefWidth="180.0" />
+               <Label layoutX="14.0" layoutY="40.0" text="New password">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label layoutX="211.0" layoutY="42.0" text="Confirm new password">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label fx:id="NewPasswordNotMatching" layoutX="365.0" layoutY="44.0" prefHeight="17.0" prefWidth="111.0" />
+               <Label fx:id="NewPasswordLabel" layoutX="135.0" layoutY="78.0" prefHeight="17.0" prefWidth="153.0" />
+            </children>
+         </AnchorPane>
       </children></AnchorPane>
 </AnchorPane>

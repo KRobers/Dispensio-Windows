@@ -4,42 +4,42 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="400.0" minWidth="600.0" prefHeight="0.0" prefWidth="0.0" styleClass="Pane" stylesheets="@Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane minHeight="600.0" minWidth="800.0" prefHeight="0.0" prefWidth="0.0" styleClass="Pane" stylesheets="@Background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Pane centerShape="false" layoutX="7.0" prefHeight="400.0" prefWidth="600.0">
+      <Pane centerShape="false" layoutX="7.0" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <TextField fx:id="naamMedicatie" layoutX="116.0" layoutY="94.0" promptText="Naam medicatie" />
-            <DatePicker fx:id="totDate" layoutX="300.0" layoutY="139.0" promptText="Tot en met" />
-            <DatePicker fx:id="vanafDate" layoutX="116.0" layoutY="139.0" promptText="Vanaf" />
-            <CheckBox fx:id="maandagCheck" layoutX="116.0" layoutY="229.0" mnemonicParsing="false" text="Maandag" />
-            <CheckBox fx:id="dinsdagCheck" layoutX="200.0" layoutY="229.0" mnemonicParsing="false" text="Dinsdag" />
-            <CheckBox fx:id="woensdagCheck" layoutX="285.0" layoutY="229.0" mnemonicParsing="false" text="Woensdag" />
-            <CheckBox fx:id="donderdagCheck" layoutX="387.0" layoutY="229.0" mnemonicParsing="false" text="Donderdag" />
-            <CheckBox fx:id="vrijdagCheck" layoutX="174.0" layoutY="262.0" mnemonicParsing="false" text="Vrijdag" />
-            <CheckBox fx:id="zaterdagCheck" layoutX="255.0" layoutY="262.0" mnemonicParsing="false" text="Zaterdag" />
-            <CheckBox fx:id="zondagCheck" layoutX="337.0" layoutY="262.0" mnemonicParsing="false" text="Zondag" />
-             <Spinner fx:id="spinnerDosering" layoutX="297.0" layoutY="94.0" prefHeight="25.0" prefWidth="52.0">
+            <TextField fx:id="naamMedicatie" layoutX="228.0" layoutY="133.0" promptText="Naam medicatie" />
+            <DatePicker fx:id="totDate" layoutX="412.0" layoutY="178.0" promptText="Tot en met" />
+            <DatePicker fx:id="vanafDate" layoutX="228.0" layoutY="178.0" promptText="Vanaf" />
+            <CheckBox fx:id="maandagCheck" layoutX="228.0" layoutY="268.0" mnemonicParsing="false" text="Maandag" />
+            <CheckBox fx:id="dinsdagCheck" layoutX="312.0" layoutY="268.0" mnemonicParsing="false" text="Dinsdag" />
+            <CheckBox fx:id="woensdagCheck" layoutX="397.0" layoutY="268.0" mnemonicParsing="false" text="Woensdag" />
+            <CheckBox fx:id="donderdagCheck" layoutX="499.0" layoutY="268.0" mnemonicParsing="false" text="Donderdag" />
+            <CheckBox fx:id="vrijdagCheck" layoutX="286.0" layoutY="301.0" mnemonicParsing="false" text="Vrijdag" />
+            <CheckBox fx:id="zaterdagCheck" layoutX="367.0" layoutY="301.0" mnemonicParsing="false" text="Zaterdag" />
+            <CheckBox fx:id="zondagCheck" layoutX="449.0" layoutY="301.0" mnemonicParsing="false" text="Zondag" />
+             <Spinner fx:id="spinnerDosering" layoutX="409.0" layoutY="133.0" prefHeight="25.0" prefWidth="52.0">
                  <valueFactory>
                      <SpinnerValueFactory.IntegerSpinnerValueFactory max="10" min="0" />
                  </valueFactory>
              </Spinner>
-            <TextField fx:id="dosering" layoutX="349.0" layoutY="94.0" prefHeight="25.0" prefWidth="124.0" promptText=" Dosering in mg" />
-             <Spinner fx:id="spinnerUur" layoutX="248.0" layoutY="188.0" prefHeight="25.0" prefWidth="52.0">
+            <TextField fx:id="dosering" layoutX="461.0" layoutY="133.0" prefHeight="25.0" prefWidth="124.0" promptText=" Dosering in mg" />
+             <Spinner fx:id="spinnerUur" layoutX="360.0" layoutY="227.0" prefHeight="25.0" prefWidth="52.0">
                  <valueFactory>
                      <SpinnerValueFactory.IntegerSpinnerValueFactory max="24" min="00" />
                  </valueFactory>
              </Spinner>
-             <Spinner fx:id="spinnerMinuut" layoutX="298.0" layoutY="188.0" prefHeight="25.0" prefWidth="52.0">
+             <Spinner fx:id="spinnerMinuut" layoutX="410.0" layoutY="227.0" prefHeight="25.0" prefWidth="52.0">
                  <valueFactory>
                      <SpinnerValueFactory.IntegerSpinnerValueFactory max="59" min="00" />
                  </valueFactory>
              </Spinner>
-            <Button fx:id="cancelBox" layoutX="259.0" layoutY="299.0" mnemonicParsing="false" onAction="#closeButtononAction" text="Ok" />
+            <Button fx:id="cancelBox" layoutX="371.0" layoutY="338.0" mnemonicParsing="false" onAction="#closeButtononAction" text="Ok" />
          </children>
       </Pane>
-      <AnchorPane prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: #6bdbff;">
+      <AnchorPane prefHeight="81.0" prefWidth="800.0" style="-fx-background-color: #6bdbff;">
          <children>
-            <Label layoutX="163.0" layoutY="11.0" text="Voeg hier de medicatie toe" textFill="WHITE">
+            <Label layoutX="263.0" layoutY="11.0" text="Voeg hier de medicatie toe" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font></Label>

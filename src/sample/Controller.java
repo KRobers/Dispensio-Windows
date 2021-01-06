@@ -116,7 +116,7 @@ public class Controller {
              * if "fx:controller" is not set in fxml
              * fxmlLoader.setController(NewWindowController);
              */
-            Scene scene = new Scene(fxmlLoader.load(), 630, 400);
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
             Stage stage = new Stage();
             stage.setTitle("Add");
             stage.setScene(scene);
@@ -233,6 +233,7 @@ public class Controller {
         else {
             resultaatDagen = resultaatDagen;
         }
+
         System.out.println(resultaatDagen);
         Stage stage = (Stage) cancelBox.getScene().getWindow();
         stage.close();
