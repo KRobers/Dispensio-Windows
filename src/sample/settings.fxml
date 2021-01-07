@@ -53,26 +53,9 @@
             </Button>
 
     </VBox>
-   <AnchorPane layoutX="73.0" layoutY="-3.0" prefHeight="66.0" prefWidth="538.0" styleClass="Pane" stylesheets="@Background.css">
-      <children>
-         <ImageView fitHeight="54.0" fitWidth="59.0" layoutX="107.0" layoutY="6.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../images/settings-solid.png" />
-            </image>
-         </ImageView>
-         <ImageView fitHeight="54.0" fitWidth="62.0" layoutX="242.0" layoutY="6.0" opacity="0.86" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../images/contacts.png" />
-            </image></ImageView>
-         <ImageView fitHeight="61.0" fitWidth="95.0" layoutX="378.0" layoutY="3.0" opacity="0.54" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../images/info.png" />
-            </image>
-         </ImageView>
-      </children></AnchorPane>
    <AnchorPane fx:id="Info" layoutX="73.0" layoutY="75.0" prefHeight="325.0" prefWidth="538.0" style="-fx-background-color: darkgrey;" />
    <AnchorPane fx:id="contact" layoutX="73.0" layoutY="75.0" prefHeight="325.0" prefWidth="538.0" style="-fx-background-color: darkgrey;" />
-   <AnchorPane fx:id="Settings" layoutX="73.0" layoutY="75.0" prefHeight="325.0" prefWidth="538.0" style="-fx-background-color: darkgrey;" stylesheets="@Background.css">
+   <AnchorPane fx:id="Settings" layoutX="73.0" prefHeight="400.0" prefWidth="538.0" style="-fx-background-color: darkgrey;" stylesheets="@Background.css">
       <children>
          <Label layoutX="27.0" layoutY="33.0" text="TOUCH ENABLED" textFill="WHITE">
             <font>
