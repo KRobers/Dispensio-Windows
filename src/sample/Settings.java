@@ -48,7 +48,7 @@ public class Settings {
 
             String Newpassword = NewPassword.getText();
 
-            String Insert = "UPDATE accountgegevens SET Wachtwoord = "+ Newpassword + "WHERE Gebruikersnaam = 'Jordy'";
+            String Insert = "UPDATE accountgegevens SET Wachtwoord = 1 + WHERE Gebruikersnaam = 'Jordy'";
 
             try {
                 Statement statement = connectDbReg.createStatement();
