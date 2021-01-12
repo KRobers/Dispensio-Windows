@@ -1,16 +1,18 @@
 package sample;
 
-import javafx.event.ActionEvent;
+/*import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+//import org.controlsfx.control.Notifications;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -28,6 +30,9 @@ public class LoginController {
 
     @FXML
     private Label loginMessage;
+
+    public LoginController() {
+    }
 
     public void LoginButtonOnAction(ActionEvent event) {
         if (usernameField.getText().isBlank() == false && passwordField.getText().isBlank() == false) {
@@ -58,8 +63,7 @@ public class LoginController {
                     openapp();
                 }
                 else {
-                    loginMessage.setText("Login Succesfull");
-                    openapp();
+                    loginMessage.setText("Login Unsuccesfull");
                 }
             }
 
@@ -71,7 +75,7 @@ public class LoginController {
 
     public void openapp() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("   setting.fxml"));
             Stage registerStage =new Stage();
             registerStage.setTitle("Dispensio");
             registerStage.setScene(new Scene(root, 800, 600));
@@ -96,4 +100,4 @@ public class LoginController {
             e.getCause();
         }
     }
-}
+}*/

@@ -32,6 +32,12 @@ public class Controller {
     @FXML
     private Label loginMessage;
 
+    @FXML
+    private Button addButton;
+
+    @FXML
+    private Button SettingsButton;
+
     public void LoginButtonOnAction(ActionEvent event) {
         if (usernameField.getText().isBlank() == false && passwordField.getText().isBlank() == false) {
             validateLogin();
@@ -60,7 +66,7 @@ public class Controller {
                     loginMessage.setText("Login Succesfull");
                     openapp();
                 } else {
-                    loginMessage.setText("Login Succesfull");
+                    loginMessage.setText("Login Unsuccesfull");
                 }
             }
 
@@ -72,17 +78,13 @@ public class Controller {
 
     public void openapp() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("Toevoeging.fxml"));
-            /*
-             * if "fx:controller" is not set in fxml
-             * fxmlLoader.setController(NewWindowController);
-             */
-            Scene scene = new Scene(fxmlLoader.load(), 630, 400);
-            Stage stage = new Stage();
-            stage.setTitle("Dispensio");
-            stage.setScene(scene);
-            stage.show();
+            Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+            Stage registerStage = new Stage();
+            registerStage.setTitle("Dispensio");
+            registerStage.setScene(new Scene(root, 800, 600));
+            registerStage.show();
+            Stage stage = (Stage) cancelButton.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -97,6 +99,8 @@ public class Controller {
             registerStage.setTitle("Dispensio");
             registerStage.setScene(new Scene(root, 800, 600));
             registerStage.show();
+            Stage stage = (Stage) cancelButton.getScene().getWindow();
+            stage.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -112,15 +116,13 @@ public class Controller {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("Toevoeging.fxml"));
-            /*
-             * if "fx:controller" is not set in fxml
-             * fxmlLoader.setController(NewWindowController);
-             */
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-            Stage stage = new Stage();
-            stage.setTitle("Add");
-            stage.setScene(scene);
-            stage.show();
+            Stage AddStage = new Stage();
+            AddStage.setTitle("Add");
+            AddStage.setScene(scene);
+            AddStage.show();
+            Stage stage = (Stage) addButton.getScene().getWindow();
+            stage.close();
 
         } catch (IOException e) {
             System.out.println("werkt niet");
@@ -129,18 +131,19 @@ public class Controller {
     }
 
 
-   /* public void noti(javafx.event.ActionEvent actionEvent) {
+
+      /*  public void noti(javafx.event.ActionEvent actionEvent) {
         System.out.println("Notificatie");
 
-        Notifications.create()
+       Notifications.create()
                 .darkStyle()
                 .title("HERINERING")
                 .graphic(new Rectangle(300, 100, Color.TRANSPARENT))
                 .hideAfter(Duration.seconds(5))
                 .text("Uw bent vergeten uw medicatie in te nemen!")
                 .show();
-    }
-*/
+    }*/
+
     @FXML
     private Button cancelBox;
 
@@ -182,7 +185,7 @@ public class Controller {
         int uur = (int) spinnerUur.getValue();
         int minuut = (int) spinnerMinuut.getValue();
         String tijd = (uur + ":" + minuut);
-        
+
         boolean maandag = maandagCheck.isSelected();
         boolean dinsdag = dinsdagCheck.isSelected();
         boolean woensdag = woensdagCheck.isSelected();
@@ -193,44 +196,37 @@ public class Controller {
 
         if (maandag == true) {
             resultaatDagen = resultaatDagen + "Maandag, ";
-        }
-        else {
+        } else {
             resultaatDagen = resultaatDagen;
         }
         if (dinsdag == true) {
             resultaatDagen = resultaatDagen + "Dinsdag, ";
-        }
-        else {
+        } else {
             resultaatDagen = resultaatDagen;
         }
         if (woensdag == true) {
             resultaatDagen = resultaatDagen + "Woensdag, ";
-        }
-        else {
+        } else {
             resultaatDagen = resultaatDagen;
         }
         if (donderdag == true) {
             resultaatDagen = resultaatDagen + "Donderdag, ";
-        }
-        else {
+        } else {
             resultaatDagen = resultaatDagen;
         }
         if (vrijdag == true) {
             resultaatDagen = resultaatDagen + "Vrijdag, ";
-        }
-        else {
+        } else {
             resultaatDagen = resultaatDagen;
         }
         if (zaterdag == true) {
             resultaatDagen = resultaatDagen + "Zaterdag, ";
-        }
-        else {
+        } else {
             resultaatDagen = resultaatDagen;
         }
         if (zondag == true) {
             resultaatDagen = resultaatDagen + "Zondag";
-        }
-        else {
+        } else {
             resultaatDagen = resultaatDagen;
         }
 
@@ -241,7 +237,7 @@ public class Controller {
         Connection connectDbReg = connector.getConnection();
 
         String Insert = "INSERT INTO innameinformatie (Medicijnnaam,Aantalpillen,Gewicht,Startdatum,Eindatum,TijdInname,Innamedagen) VALUES('";
-        String Values = naamMedicijn + "','" + aantalDosering  + "','" + doseringmg + "','" + vanaf + "','" + tot + "','" + tijd +"','" + resultaatDagen + "')";
+        String Values = naamMedicijn + "','" + aantalDosering + "','" + doseringmg + "','" + vanaf + "','" + tot + "','" + tijd + "','" + resultaatDagen + "')";
         String addquery = Insert + Values;
 
         try {
@@ -256,25 +252,41 @@ public class Controller {
 
 
     //--------------------settings----------------------------------//
-    public void Setup() throws Exception {
+
+    public void Setup(javafx.event.ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("App.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage AddStage = new Stage();
+            AddStage.setTitle("Add");
+            AddStage.setScene(scene);
+            AddStage.show();
+            Stage stage = (Stage) addButton.getScene().getWindow();
+            stage.close();
+
+        } catch (IOException e) {
+            System.out.println("werkt niet");
+            ;
+        }
+    }
+
+    public void SettingsButton(javafx.event.ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("Settings.fxml"));
-            /*
-             * if "fx:controller" is not set in fxml
-             * fxmlLoader.setController(NewWindowController);
-             */
-            Scene scene = new Scene(fxmlLoader.load(), 630, 400);
-            Stage stage = new Stage();
-            stage.setTitle("Dispensio");
-            stage.setScene(scene);
-            stage.show();
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage AddStage = new Stage();
+            AddStage.setTitle("Add");
+            AddStage.setScene(scene);
+            AddStage.show();
+            Stage stage = (Stage) SettingsButton.getScene().getWindow();
+            stage.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            e.getCause();
+        } catch (IOException e) {
+            System.out.println("werkt niet");
+            ;
         }
-
     }
-    }
+}
 

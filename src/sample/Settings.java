@@ -30,6 +30,18 @@ public class Settings {
     @FXML
     private Label NewPasswordNotMatching;
 
+    @FXML
+    private Button homeButton;
+
+    @FXML
+    private Button schemaButton;
+
+    @FXML
+    private Button voegtoeButton;
+
+    @FXML
+    private Button accountButton;
+
         public void CheckPassword (ActionEvent event){
 
             if (NewPassword.getText().isBlank() == false && ConfirmNewPassword.getText().isBlank() == false) {
@@ -59,4 +71,53 @@ public class Settings {
                 e.getCause();
             }
         }
+
+        public void HomeButton(){
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+                Stage registerStage = new Stage();
+                registerStage.setTitle("Dispensio");
+                registerStage.setScene(new Scene(root, 800, 600));
+                registerStage.show();
+                Stage stage = (Stage) homeButton.getScene().getWindow();
+                stage.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.getCause();
+            }
+        }
+
+        public void SchemaButton(){
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+                Stage registerStage = new Stage();
+                registerStage.setTitle("Dispensio");
+                registerStage.setScene(new Scene(root, 800, 600));
+                registerStage.show();
+                Stage stage = (Stage) schemaButton.getScene().getWindow();
+                stage.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.getCause();
+            }
+        }
+
+        public void VoegtoeButton(){
+            try {
+                Parent root = FXMLLoader.load(getClass().getResource("Toevoeging.fxml"));
+                Stage registerStage = new Stage();
+                registerStage.setTitle("Dispensio");
+                registerStage.setScene(new Scene(root, 800, 600));
+                registerStage.show();
+                Stage stage = (Stage) voegtoeButton.getScene().getWindow();
+                stage.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.getCause();
+            }
+        }
+
 }
