@@ -7,39 +7,21 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Settings">
     <VBox prefHeight="600.0" prefWidth="125.0" styleClass="Pane" stylesheets="@Background.css">
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;">
+            <Button fx:id="schemaButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#SchemaButton" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;">
                 <graphic>
-                    <ImageView fitHeight="65.0" fitWidth="65.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@../images/home.png" />
-                        </image>
-                    </ImageView>
-                </graphic>
-            </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;">
-                <graphic>
-                    <ImageView fitHeight="65.0" fitWidth="65.0" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fx:id="SJchemaButton" fitHeight="65.0" fitWidth="65.0" onDragDetected="#SchemaButton" opacity="0.79" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@../images/inname.png" />
                         </image>
                     </ImageView>
                 </graphic>
             </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;">
+            <Button fx:id="voegtoeButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#VoegtoeButton" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;">
                 <graphic>
-                    <ImageView fitHeight="65.0" fitWidth="65.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
+                    <ImageView fx:id="VoegtoeButton" fitHeight="65.0" fitWidth="65.0" onDragDetected="#VoegtoeButton" opacity="0.67" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@../images/voorraad.png" />
                         </image></ImageView>
-                </graphic>
-            </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;">
-                <graphic>
-                    <ImageView fitHeight="50.0" fitWidth="50.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@../images/contact.png" />
-                        </image>
-                    </ImageView>
                 </graphic>
             </Button>
             <Button layoutX="10.0" layoutY="114.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="71.0" style="-fx-background-color: transparent;" />

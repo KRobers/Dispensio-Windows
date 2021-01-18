@@ -31,16 +31,10 @@ public class Settings {
     private Label NewPasswordNotMatching;
 
     @FXML
-    private Button homeButton;
-
-    @FXML
     private Button schemaButton;
 
     @FXML
     private Button voegtoeButton;
-
-    @FXML
-    private Button accountButton;
 
         public void CheckPassword (ActionEvent event){
 
@@ -60,27 +54,11 @@ public class Settings {
 
             String Newpassword = NewPassword.getText();
 
-            String Insert = "UPDATE accountgegevens SET Wachtwoord = 1 + WHERE Gebruikersnaam = 'Jordy'";
+            String Insert = "UPDATE accountgegevens SET Wachtwoord = 1 WHERE Gebruikersnaam = 'Jordy'";
 
             try {
                 Statement statement = connectDbReg.createStatement();
                 statement.executeUpdate(Insert);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                e.getCause();
-            }
-        }
-
-        public void HomeButton(){
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
-                Stage registerStage = new Stage();
-                registerStage.setTitle("Dispensio");
-                registerStage.setScene(new Scene(root, 800, 600));
-                registerStage.show();
-                Stage stage = (Stage) homeButton.getScene().getWindow();
-                stage.close();
 
             } catch (Exception e) {
                 e.printStackTrace();

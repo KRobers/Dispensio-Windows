@@ -132,7 +132,7 @@ public class Controller {
 
 
 
-      /*  public void noti(javafx.event.ActionEvent actionEvent) {
+      /*public void noti(javafx.event.ActionEvent actionEvent) {
         System.out.println("Notificatie");
 
        Notifications.create()
@@ -233,6 +233,18 @@ public class Controller {
         System.out.println(resultaatDagen);
         Stage stage = (Stage) cancelBox.getScene().getWindow();
         stage.close();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("App.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage Toevoeging = new Stage();
+            Toevoeging.setTitle("Add");
+            Toevoeging.setScene(scene);
+            Toevoeging.show();
+        } catch (IOException e) {
+            System.out.println("werkt niet");
+            ;
+        }
         connector connector = new connector();
         Connection connectDbReg = connector.getConnection();
 

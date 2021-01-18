@@ -3,6 +3,9 @@ package sample;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -49,6 +52,19 @@ public class registercontroller {
     }
 
     public void registerUser(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+            Stage registerStage = new Stage();
+            registerStage.setTitle("Dispensio");
+            registerStage.setScene(new Scene(root, 800, 600));
+            registerStage.show();
+            Stage stage = (Stage) Cancelbox.getScene().getWindow();
+            stage.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
          connector connectnow = new connector();
          Connection connectDbReg = connectnow.getConnection();
 
