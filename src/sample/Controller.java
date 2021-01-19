@@ -55,7 +55,7 @@ public class Controller {
         connector connector = new connector();
         Connection connectDbReg = connector.getConnection();
 
-        String sqlLogin = "SELECT * FROM accountgegevens WHERE Gebruikersnaam = '" + usernameField.getText() + "' AND wachtwoord ='" + passwordField.getText() + "'";
+        String sqlLogin = "SELECT * FROM accountgegevens WHERE Gebruikersnaam = '" + usernameField.getText() + "' AND wachtwoord =sha1('" + passwordField.getText() + "')";
 
         try {
             Statement statement = connectDbReg.createStatement();
