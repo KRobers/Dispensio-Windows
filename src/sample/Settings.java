@@ -36,6 +36,9 @@ public class Settings extends Controller{
     @FXML
     private Button voegtoeButton;
 
+    @FXML
+    private Label ResetConfirmed;
+
         public void CheckPassword (ActionEvent event){
 
             if (NewPassword.getText().isBlank() == false && ConfirmNewPassword.getText().isBlank() == false) {
@@ -58,6 +61,7 @@ public class Settings extends Controller{
             String Insert = "UPDATE accountgegevens SET Wachtwoord =sha1('" + Newpassword + "')WHERE Gebruikersnaam ='Jordy'";
 
             try {
+                ResetConfirmed.setText("Password succesfully changed");
                 Statement statement = connectDbReg.createStatement();
                 statement.executeUpdate(Insert);
 

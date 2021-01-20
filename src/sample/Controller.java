@@ -162,6 +162,9 @@ public class Controller {
     @FXML
     private String resultaatDagen;
 
+    @FXML
+    private Button backtoCalender;
+
 
     @FXML
     public void closeButtononAction(ActionEvent actionEvent) {
@@ -262,10 +265,28 @@ public class Controller {
         }
     }
 
+    public void backtocalender(javafx.event.ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("App.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage CalendarStage = new Stage();
+            CalendarStage.setTitle("Add");
+            CalendarStage.setScene(scene);
+            CalendarStage.show();
+            Stage stage = (Stage) backtoCalender.getScene().getWindow();
+            stage.close();
+
+        } catch (IOException e) {
+            System.out.println("werkt niet");
+
+        }
+    }
+
 
     //--------------------settings----------------------------------//
 
-    public void Setup(javafx.event.ActionEvent actionEvent) {
+    public void Setup (javafx.event.ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("App.fxml"));
