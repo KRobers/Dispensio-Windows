@@ -24,7 +24,7 @@ public class Controller {
     private Button cancelButton;
 
     @FXML
-    private TextField usernameField;
+    public TextField usernameField;
 
     @FXML
     private PasswordField passwordField;

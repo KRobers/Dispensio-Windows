@@ -16,7 +16,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Settings {
+public class Settings extends Controller{
 
     @FXML
     private PasswordField NewPassword;
@@ -48,13 +48,14 @@ public class Settings {
                 NewPasswordLabel.setText("Please typ your information to continue");
             }
         }
-        public void Resetpassword () {
+        public void Resetpassword() {
+            Settings settings = new Settings();
             connector connector = new connector();
             Connection connectDbReg = connector.getConnection();
 
             String Newpassword = NewPassword.getText();
 
-            String Insert = "UPDATE accountgegevens SET Wachtwoord ='" + Newpassword + "'WHERE Gebruikersnaam = 'Jordy'";
+            String Insert = "UPDATE accountgegevens SET Wachtwoord =sha1('" + Newpassword + "')WHERE Gebruikersnaam ='Jordy'";
 
             try {
                 Statement statement = connectDbReg.createStatement();
