@@ -28,7 +28,7 @@ public class Controller  implements Initializable {
     private Button cancelButton;
 
     @FXML
-    private TextField usernameField;
+    public TextField usernameField;
 
     @FXML
     private PasswordField passwordField;
@@ -59,7 +59,7 @@ public class Controller  implements Initializable {
         connector connector = new connector();
         Connection connectDbReg = connector.getConnection();
 
-        String sqlLogin = "SELECT * FROM accountgegevens WHERE Gebruikersnaam = '" + usernameField.getText() + "' AND wachtwoord ='" + passwordField.getText() + "'";
+        String sqlLogin = "SELECT * FROM accountgegevens WHERE Gebruikersnaam = '" + usernameField.getText() + "' AND wachtwoord =sha1('" + passwordField.getText() + "')";
 
         try {
             Statement statement = connectDbReg.createStatement();
@@ -166,6 +166,9 @@ public class Controller  implements Initializable {
     @FXML
     private String resultaatDagen;
 
+    @FXML
+    private Button backtoCalender;
+
 
     @FXML
     public void closeButtononAction(ActionEvent actionEvent) {
@@ -266,10 +269,28 @@ public class Controller  implements Initializable {
         }
     }
 
+    public void backtocalender(javafx.event.ActionEvent actionEvent) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("App.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+            Stage CalendarStage = new Stage();
+            CalendarStage.setTitle("Add");
+            CalendarStage.setScene(scene);
+            CalendarStage.show();
+            Stage stage = (Stage) backtoCalender.getScene().getWindow();
+            stage.close();
+
+        } catch (IOException e) {
+            System.out.println("werkt niet");
+
+        }
+    }
+
 
     //--------------------settings----------------------------------//
 
-    public void Setup(javafx.event.ActionEvent actionEvent) {
+    public void Setup (javafx.event.ActionEvent actionEvent) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("App.fxml"));

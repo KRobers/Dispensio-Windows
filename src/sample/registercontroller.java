@@ -72,7 +72,7 @@ public class registercontroller {
          String Password = Passwordbox.getText();
 
          String insertFieldsQuery = "INSERT INTO accountgegevens(Gebruikersnaam,Wachtwoord) VALUES ('";
-         String insertValues = Username + "','" + Password + "')";
+         String insertValues = Username + "',sha1('"  + Password + "'))";
          String insertRegister = insertFieldsQuery + insertValues;
 
         try {
