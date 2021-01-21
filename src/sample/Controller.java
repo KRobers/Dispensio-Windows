@@ -1,24 +1,28 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-//import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class Controller {
+//import org.controlsfx.control.Notifications;
+
+public class Controller  implements Initializable {
 
     @FXML
     private Button cancelButton;
@@ -300,5 +304,49 @@ public class Controller {
             ;
         }
     }
-}
 
+    //---------------------tableview-----------------------//
+    @FXML
+    private TableView<table> tbData;
+
+    @FXML
+    private TableColumn<table, String> maandagTable;
+
+    @FXML
+    private TableColumn<table, String> dinsdagTable;
+
+    @FXML
+    private TableColumn<table, String> woensdagTable;
+
+    @FXML
+    private TableColumn<table, String> donderdagTable;
+
+    @FXML
+    private TableColumn<table, String> vrijdagTable;
+
+    @FXML
+    private TableColumn<table, String> zaterdagTable;
+
+    @FXML
+    private TableColumn<table, String> zondagTable;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
+
+        maandagTable.setCellValueFactory(new PropertyValueFactory<>("maandagTable"));
+        dinsdagTable.setCellValueFactory(new PropertyValueFactory<>("dinsdagTable"));
+        woensdagTable.setCellValueFactory(new PropertyValueFactory<>("woensdagTable"));
+        donderdagTable.setCellValueFactory(new PropertyValueFactory<>("donderdagTable"));
+        vrijdagTable.setCellValueFactory(new PropertyValueFactory<>("vrijdagTable"));
+        zaterdagTable.setCellValueFactory(new PropertyValueFactory<>("zaterdagTable"));
+        zondagTable.setCellValueFactory(new PropertyValueFactory<>("zondagTable"));
+
+        tbData.setItems(tables);
+    }
+
+    private final ObservableList<table> tables = FXCollections.observableArrayList(
+            new table("Paracetemol", "", "paracetemol", "", "paracetemol","Antibiotica","Paracetemol"),
+            new table("Paracetemol", "", "paracetemol", "", "paracetemol","Antibiotica","Paracetemol")
+    );
+
+}
